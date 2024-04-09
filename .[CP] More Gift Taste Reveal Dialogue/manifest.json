@@ -1,0 +1,21 @@
+{
+    "Name": "More Gift Taste Reveal Dialogue",
+    "Author": "Pooh",
+    "Version": "1.0.0",
+    "Description": "More Gift Taste Reveal Dialogue",
+    "UniqueID": "poohnhi.MoreGiftTasteRevealDialogue.CP",
+    "UpdateKeys": [ "???" ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.SpaceCore",
+            "IsRequired": true
+        },
+        {
+            "UniqueID": "poohnhi.PoohCore",
+            "IsRequired": true
+        }
+    ]
+  }

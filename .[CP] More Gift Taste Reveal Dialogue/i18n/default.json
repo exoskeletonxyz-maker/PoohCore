@@ -1,0 +1,8 @@
+{
+    "DefaultPersonal.1": "I'd love to receive {{GiftTasteItemDisplayName}}... Why are you asking?%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
+    "DefaultPersonal.2": "I'd never say no to {{GiftTasteItemDisplayName}}. Is there any reason why you want to know?%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
+    "DefaultRelative.1": "$query {{relativeHasSpecialTitle}}#Don't you know? My {{relativeCharacterTitle}} loves {{GiftTasteItemDisplayName}}!%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}|Don't you know? {{relativeCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}!%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}",
+    "DefaultRelative.2": "$query {{relativeHasSpecialTitle}}#I know that my {{relativeCharacterTitle}} loves {{GiftTasteItemDisplayName}}... Plan for a surprise gift? Don't worry, I won't tell.%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}|I know that {{relativeCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}... Plan for a surprise gift? Don't worry, I won't tell.%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}",
+    "DefaultFriend.1": "I'm pretty sure {{originalCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}! You can thank me later.%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
+    "DefaultFriend.2": "{{originalCharacterDisplayName}} would loves {{GiftTasteItemDisplayName}}!%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}"
+}
