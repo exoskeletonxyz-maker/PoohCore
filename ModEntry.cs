@@ -34,8 +34,6 @@ using ContentPatcher;
 using System.Linq;
 using Microsoft.Xna.Framework.Input;
 using StardewValley.Delegates;
-// using SpaceCore;
-// using SpaceCore.Events;
 using StardewValley.TokenizableStrings;
 using static System.Net.Mime.MediaTypeNames;
 using StardewValley.Extensions;
@@ -50,18 +48,27 @@ namespace PoohCore
 {
     public partial class ModEntry : Mod
     {
+        public static HashSet<string> ListOfModifiedNPC = new HashSet<string> { };
         static List<string> ListOfMailFlag = new List<string> { };
-        // numbers.Add(1);
-
-        public static IModHelper Mhelper;
         public override void Entry(IModHelper helper)
         {
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.GameLoop.DayStarted += this.OnDayStarted;
             helper.Events.GameLoop.DayEnding += this.OnDayEnding;
-            /*TokenParser.RegisterParser("GetRandomItemIDForGiftTaste", GetRandomItemIDForGiftTaste);
-            TokenParser.RegisterParser("GetRelativeNameForGiftTaste", GetRelativeNameForGiftTaste);*/
-            
+            var harmony = new Harmony(this.ModManifest.UniqueID);
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.NPC), "behaviorOnFarmerLocationEntry"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.behaviorOnFarmerLocationEntry_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.Event), "addActor"),
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.addActor_Postfix))
+            );
+            harmony.Patch(
+                original: AccessTools.Method(typeof(StardewValley.NPC), "resetForNewDay"),
+                prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.resetForNewDay_Prefix))
+            );
+
         }
         public void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
@@ -71,6 +78,7 @@ namespace PoohCore
             api.RegisterToken(this.ModManifest, "GetRelativeNameForGiftTaste", new GetRelativeNameToken());
             api.RegisterToken(this.ModManifest, "GetRelativeDisplayNameForGiftTaste", new GetRelativeDisplayNameToken());
             api.RegisterToken(this.ModManifest, "GetItemNameForGiftTaste", new GetItemNameToken());
+            api.RegisterToken(this.ModManifest, "GetGiftTasteCPTokenFromSomeOne", new GetGiftTasteCPTokenFromSomeOneToken());
             GameStateQuery.Register("poohnhi.PoohCore_HARVEST_ITEM_PRICE", delegate (string[] query, GameStateQueryContext context)
             {
                 try
@@ -145,7 +153,40 @@ namespace PoohCore
         }
         public void OnDayStarted(object sender, DayStartedEventArgs e)
         {
+            foreach (NPC thisChar in Utility.getAllVillagers())
+            {
+
+                    try
+                    {
+                        if (thisChar != null)
+                        {
+                            CharacterData data = thisChar.GetData();
+                            if (data != null)
+                            {
+                                try
+                                {
+                                    var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/WideCharacter", out string WideCharacterValue);
+                                    if (WideCharacterValue != null && WideCharacterValue != "false")
+                                    ListOfModifiedNPC.Add(thisChar.Name);
+                                
+                                }
+                                catch { }
+                                try
+                                {
+                                    var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/HighCharacter", out string HighCharacterValue);
+                                    if (HighCharacterValue != null && HighCharacterValue != "false")
+                                    ListOfModifiedNPC.Add(thisChar.Name);
+
+                                }
+                                catch { }
+                        }
+                        }
+                    }
+                    catch { }
+                
+            }
         }
+
         public void OnDayEnding(object sender, DayEndingEventArgs e)
         {
             foreach (var todayMailFlag in ListOfMailFlag)

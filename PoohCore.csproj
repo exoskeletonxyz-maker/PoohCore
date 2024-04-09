@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>PoohCore</RootNamespace>
-	<GamePath>G:/Steam/steamapps/common/Stardew Valley</GamePath>
+	<GamePath>C:\XboxGames\Stardew Valley\Content</GamePath>
 	  <EnableHarmony>true</EnableHarmony>
 
   </PropertyGroup>

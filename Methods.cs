@@ -46,6 +46,7 @@ namespace PoohCore
     {
         /// <summary>A token which returns the player's initials, or the initials of the input name.</summary>
         /// numbers.Add(1);
+        /// return {0} id, {1} item display name {2} npc name {3} npc display name 
         public static string GetMailFlagProgressNumberFromMailFlag(string mailFlag)
         {
             string currentNum = "0";
@@ -67,7 +68,49 @@ namespace PoohCore
             num += 1;
             return num.ToString();
         }
+        internal class GetGiftTasteCPTokenFromSomeOneToken
+        {
+            private string NPCName = "";
+            private string relativecheck = "false";
+            public bool AllowsInput()
+            {
+                return true;
+            }
+            public bool RequiresInput()
+            {
+                return true;
+            }
+            public bool CanHaveMultipleValues(string input = null)
+            {
+                return false;
+            }
+            public bool UpdateContext()
+            {
+                string check = "";
+                string oldCheck = this.NPCName;
+                string relativecheck = "";
+                string oldrelativeCheck = this.relativecheck;
+                return (check != oldCheck || relativecheck != oldrelativeCheck);
+            }
+            public IEnumerable<string> GetValues(string input)
+            {
+                if (string.IsNullOrWhiteSpace(input))
+                    yield break;
+                string[] tempInput = input.Split(' ');
+                string NPCInternalName = tempInput[0];
+                string giftTaste = tempInput[1];
+                string relativeCheck = tempInput[2];
+                string excludeId = tempInput[3];
+                string[] excludeIdList;
+                if (excludeId != "none")
+                    excludeIdList = excludeId.Split('-');
+                else
+                    excludeIdList = "".Split(' ');
+                this.relativecheck = relativeCheck;
+                yield return GetGiftTasteCPTokenFromSomeOne(NPCInternalName, giftTaste, relativeCheck, excludeIdList);
 
+            }
+        }
         internal class GetMailFlagProgressNumberToken
         {
             private string MailFlag = "";
@@ -107,7 +150,9 @@ namespace PoohCore
         }
         internal class GetGiftToken
         {
+            Random r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * 77);
             private string NPCName = "";
+            private string relativecheck = "";
             public bool AllowsInput()
             {
                 return true;
@@ -124,7 +169,9 @@ namespace PoohCore
             {
                 string check = "";
                 string oldCheck = this.NPCName;
-                return check != oldCheck;
+                string relativecheck = "";
+                string oldrelativeCheck = this.relativecheck;
+                return (check != oldCheck);
             }
             public IEnumerable<string> GetValues(string input)
             {
@@ -134,20 +181,27 @@ namespace PoohCore
                 string[] tempInput = input.Split(' ');
                 string NPCInternalName = tempInput[0];
                 string giftTaste = tempInput[1];
-                string relativeCheck = tempInput[2];
-
-                // get initials
+                string relativeCheck = "";
+                try
+                {
+                   
+                    relativeCheck = tempInput[2];
+                    // get initials
+                    this.relativecheck = relativeCheck;
+                    
+                }
+                catch { }
 
                 if (relativeCheck == "true" || relativeCheck == "True")
                 {
                     string relativeName = GetRelativeNPC(NPCInternalName);
                     this.NPCName = relativeName;
-                    yield return GetIDGenerator(relativeName, giftTaste);
+                    yield return GetIDGenerator(relativeName, giftTaste, r);
                 }
                 else
                 {
                     this.NPCName = NPCInternalName;
-                    yield return GetIDGenerator(NPCInternalName, giftTaste);
+                    yield return GetIDGenerator(NPCInternalName, giftTaste, r);
                 }
 
             }
@@ -168,7 +222,12 @@ namespace PoohCore
             {
                 return false;
             }
-
+            public bool UpdateContext()
+            {
+                string check = "";
+                string oldCheck = this.relativeName;
+                return (check != oldCheck);
+            }
             public IEnumerable<string> GetValues(string input)
             {
                 string relativeName = GetRelativeNPC(input);
@@ -242,14 +301,13 @@ namespace PoohCore
                 yield break;
             }
         }
-        public static string GetIDGenerator(string internalNPC, string giftTaste)
+        public static string GetIDGenerator(string internalNPC, string giftTaste, Random r)
         {
             // giftTaste is loved, liked, ... hated
             // internalNPC is the internal NPC name that it try to get gift taste
             NPC npc = Game1.getCharacterFromName(internalNPC);
-            if (npc!=null)
+            if (npc != null)
             {
-                Random r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * 77);
                 CharacterData npcData = npc.GetData();
                 Dictionary<string, string> npcGiftTastes = DataLoader.NpcGiftTastes(Game1.content);
                 if (npcGiftTastes.TryGetValue(internalNPC, out var rawGiftTasteData))
@@ -286,7 +344,6 @@ namespace PoohCore
         }
         public static string GetRelativeNPC(string internalNPC)
         {
-
             NPC npc = Game1.getCharacterFromName(internalNPC);
             if (npc!=null)
             {
@@ -301,6 +358,8 @@ namespace PoohCore
 
         public static bool GetRandomItemIDForGiftTaste(string[] query, out string replacement, Random random, Farmer player)
         {
+            Random r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * 77);
+
             if (!ArgUtility.TryGet(query, 1, out var NPCInternalName, out var error) || !ArgUtility.TryGet(query, 2, out var giftTaste, out error) || !ArgUtility.TryGet(query, 3, out var relativeCheck, out error))
             {
                 return TokenParser.LogTokenError(query, error, out replacement);
@@ -308,10 +367,10 @@ namespace PoohCore
             if (relativeCheck == "true" || relativeCheck == "True")
             {
                 string relativeName = GetRelativeNPC(NPCInternalName);
-                replacement = GetIDGenerator(relativeName, giftTaste);
+                replacement = GetIDGenerator(relativeName, giftTaste, r);
                 return true;
             }
-            replacement = GetIDGenerator(NPCInternalName, giftTaste);
+            replacement = GetIDGenerator(NPCInternalName, giftTaste, r);
             return true;
         }
         public static bool GetRelativeNameForGiftTaste(string[] query, out string replacement, Random random, Farmer player)
@@ -324,6 +383,100 @@ namespace PoohCore
             replacement = relativeName;
             return true;
 
+        }
+        public static string GetGiftTasteCPTokenFromSomeOne(string NPCInternalName, string giftTaste, string relativeCheck, string[]excludeIdList)
+        {
+            Random r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * (77+NPCInternalName.Length));
+            string replacement = "";
+            replacement += " |originalCharacterName=" + NPCInternalName;
+            try
+            {
+                NPC npc = Game1.getCharacterFromName(NPCInternalName);
+                if (npc != null)
+                    replacement += " |originalCharacterDisplayName=" + npc.displayName;
+                if (relativeCheck == "true" || relativeCheck == "True")
+                {
+                    string relativeName = "";
+                    string relativeTitle = "";
+                    string relativeDisplayName = "";
+                    if (npc != null)
+                    {
+                        CharacterData npcData = npc.GetData();
+                        while (npcData?.FriendsAndFamily != null && Utility.TryGetRandom(npcData.FriendsAndFamily, out relativeName, out relativeTitle))
+                        {
+                            NPC relativenpc = Game1.getCharacterFromName(relativeName);
+                            if (relativenpc != null)
+                            {
+                                relativeDisplayName = relativenpc.displayName;
+                                break;
+                            }
+                        }
+                        replacement += " |relativeCharacterName=" + relativeName;
+                        replacement += " |relativeCharacterDisplayName=" + relativeDisplayName; 
+                        if (relativeTitle != "" && relativeTitle != relativeDisplayName && relativeTitle != relativeName)
+                        {
+                            replacement += " |relativeHasSpecialTitle=" + "true";
+                            replacement += " |relativeCharacterTitle=" + TokenParser.ParseText(relativeTitle);
+                        }
+                            
+                        else
+                        {
+                            replacement += " |relativeHasSpecialTitle=" + "false";
+                            replacement += " |relativeCharacterTitle=" + relativeDisplayName;
+                        }
+                            
+                    }
+                    
+                    string itemId = GetIDGenerator(relativeName, giftTaste, r);
+                    int i = 1;
+                    while(Array.IndexOf(excludeIdList, itemId) > -1) {
+                        r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * (77 + i));
+                        i++;
+                        itemId = GetIDGenerator(relativeName, giftTaste, r);
+                    }
+                    i = 1;
+                    ParsedItemData itemData = ItemRegistry.GetDataOrErrorItem(itemId);
+                    while (itemData.IsErrorItem)
+                    {
+                        r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * (77 + i));
+                        i++;
+                        itemId = GetIDGenerator(relativeName, giftTaste, r);
+                        itemData = ItemRegistry.GetDataOrErrorItem(itemId);
+                    }
+                    replacement += " |GiftTasteItemId=" + itemId;
+                    string itemDisplayName = itemData.DisplayName;
+                    replacement += " |GiftTasteItemDisplayName=" + itemDisplayName;
+
+                }
+            }
+            catch
+            {
+                replacement += " |originalCharacterDisplayName=" + NPCInternalName;
+            }
+            if (relativeCheck != "true" && relativeCheck != "True")
+            {
+                string itemId = GetIDGenerator(NPCInternalName, giftTaste, r);
+                int i = 1;
+                while (Array.IndexOf(excludeIdList, itemId) > -1)
+                {
+                    r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * (77 + i));
+                    i++;
+                    itemId = GetIDGenerator(NPCInternalName, giftTaste, r);
+                }
+                i = 1;
+                    ParsedItemData itemData = ItemRegistry.GetDataOrErrorItem(itemId);
+                while (itemData.IsErrorItem)
+                {
+                    r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * (77 + i));
+                    i++;
+                    itemId = GetIDGenerator(NPCInternalName, giftTaste, r);
+                    itemData = ItemRegistry.GetDataOrErrorItem(itemId);
+                }
+                replacement += " |GiftTasteItemId=" + itemId;
+                string itemDisplayName = itemData.DisplayName;
+                replacement += " |GiftTasteItemDisplayName=" + itemDisplayName;
+            }
+            return replacement;
         }
     }
 
