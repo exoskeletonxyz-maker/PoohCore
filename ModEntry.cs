@@ -50,6 +50,11 @@ namespace PoohCore
     {
         public static HashSet<string> ListOfModifiedNPC = new HashSet<string> { };
         static List<string> ListOfMailFlag = new List<string> { };
+        static string[] universalLoves = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Love"]);
+        static string[] universalHates = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Hate"]);
+        static string[] universalLikes = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Like"]);
+        static string[] universalDislikes = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Dislike"]);
+        static string[] universalNeutrals = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Neutral"]);
         public override void Entry(IModHelper helper)
         {
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
@@ -74,10 +79,6 @@ namespace PoohCore
         {
             var api = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>("Pathoschild.ContentPatcher");
             api.RegisterToken(this.ModManifest, "GetMailFlagProgressNumber", new GetMailFlagProgressNumberToken());
-            api.RegisterToken(this.ModManifest, "GetRandomItemIDForGiftTaste", new GetGiftToken());
-            api.RegisterToken(this.ModManifest, "GetRelativeNameForGiftTaste", new GetRelativeNameToken());
-            api.RegisterToken(this.ModManifest, "GetRelativeDisplayNameForGiftTaste", new GetRelativeDisplayNameToken());
-            api.RegisterToken(this.ModManifest, "GetItemNameForGiftTaste", new GetItemNameToken());
             api.RegisterToken(this.ModManifest, "GetGiftTasteCPTokenFromSomeOne", new GetGiftTasteCPTokenFromSomeOneToken());
             GameStateQuery.Register("poohnhi.PoohCore_HARVEST_ITEM_PRICE", delegate (string[] query, GameStateQueryContext context)
             {
@@ -153,37 +154,38 @@ namespace PoohCore
         }
         public void OnDayStarted(object sender, DayStartedEventArgs e)
         {
+            universalLoves = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Love"]);
+            universalHates = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Hate"]);
+            universalLikes = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Like"]);
+            universalDislikes = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Dislike"]);
+            universalNeutrals = ArgUtility.SplitBySpace(Game1.NPCGiftTastes["Universal_Neutral"]);
             foreach (NPC thisChar in Utility.getAllVillagers())
             {
-
-                    try
+                try
+                {
+                    if (thisChar != null)
                     {
-                        if (thisChar != null)
+                        CharacterData data = thisChar.GetData();
+                        if (data != null)
                         {
-                            CharacterData data = thisChar.GetData();
-                            if (data != null)
+                            try
                             {
-                                try
-                                {
-                                    var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/WideCharacter", out string WideCharacterValue);
-                                    if (WideCharacterValue != null && WideCharacterValue != "false")
-                                    ListOfModifiedNPC.Add(thisChar.Name);
-                                
-                                }
-                                catch { }
-                                try
-                                {
-                                    var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/HighCharacter", out string HighCharacterValue);
-                                    if (HighCharacterValue != null && HighCharacterValue != "false")
-                                    ListOfModifiedNPC.Add(thisChar.Name);
-
-                                }
-                                catch { }
-                        }
+                                var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/WideCharacter", out string WideCharacterValue);
+                                if (WideCharacterValue != null && WideCharacterValue != "false")
+                                ListOfModifiedNPC.Add(thisChar.Name);
+                            }
+                            catch { }
+                            try
+                            {
+                                var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/HighCharacter", out string HighCharacterValue);
+                                if (HighCharacterValue != null && HighCharacterValue != "false")
+                                ListOfModifiedNPC.Add(thisChar.Name);
+                            }
+                            catch { }
                         }
                     }
-                    catch { }
-                
+                }
+                catch { }
             }
         }
 
