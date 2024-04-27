@@ -1,8 +1,19 @@
 {
-    "DefaultPersonal.1": "I'd love to receive {{GiftTasteItemDisplayName}}... Why are you asking?%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
-    "DefaultPersonal.2": "I'd never say no to {{GiftTasteItemDisplayName}}. Is there any reason why you want to know?%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
-    "DefaultRelative.1": "$query {{relativeHasSpecialTitle}}#Don't you know? My {{relativeCharacterTitle}} loves {{GiftTasteItemDisplayName}}!%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}|Don't you know? {{relativeCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}!%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}",
-    "DefaultRelative.2": "$query {{relativeHasSpecialTitle}}#I know that my {{relativeCharacterTitle}} loves {{GiftTasteItemDisplayName}}... Plan for a surprise gift? Don't worry, I won't tell.%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}|I know that {{relativeCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}... Plan for a surprise gift? Don't worry, I won't tell.%revealtaste:{{relativeCharacterName}}:(O){{GiftTasteItemId}}",
-    "DefaultFriend.1": "I'm pretty sure {{originalCharacterDisplayName}} loves {{GiftTasteItemDisplayName}}! You can thank me later.%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}",
-    "DefaultFriend.2": "{{originalCharacterDisplayName}} would loves {{GiftTasteItemDisplayName}}!%revealtaste:{{originalCharacterName}}:(O){{GiftTasteItemId}}"
+    // Answer when it's about themself
+    "DefaultPersonal.1": "I'd love to receive [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]... Why are you asking?$1%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultPersonal.2": "I'd never say no to [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]. Is there any reason why you want to know?$1%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultPersonal.3": "I find myself wanting for [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}] lately. There's something special about it...%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultPersonal.4": "The best gift for me would be [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]! %revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+
+    "DefaultPersonal.5": "Well, [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}] wouldn't be so bad. Why would you want to know?%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultPersonal.6": "[ItemName {{GiftTasteItemId}}] would be nice to have.%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+
+    "DefaultRelative.1": "$query {{relativeHasSpecialTitle}}#Don't you know? My {{relativeCharacterTitle}} loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]!$1%revealtaste:{{relativeCharacterName}}:{{GiftTasteItemId}}|Don't you know? [CharacterName {{relativeCharacterName}}] loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]!$1%revealtaste:{{relativeCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultRelative.2": "$query {{relativeHasSpecialTitle}}#I know that my {{relativeCharacterTitle}} loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]... Plan for a surprise gift? Don't worry, I won't tell.$1%revealtaste:{{relativeCharacterName}}:{{GiftTasteItemId}}|I know that [CharacterName {{relativeCharacterName}}] loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]... Plan for a surprise gift? Don't worry, I won't tell.$1%revealtaste:{{relativeCharacterName}}:{{GiftTasteItemId}}",
+    
+    // Answer when it's a friend
+    // Positive
+    "DefaultFriend.1": "I'm pretty sure [CharacterName {{originalCharacterName}}] loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]!$1%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultFriend.2": "Let me try to remember... Oh, I know! [CharacterName {{originalCharacterName}}] would loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]!$1%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
+    "DefaultFriend.3": "Let me try to remember... Oh, I know! [CharacterName {{originalCharacterName}}] would loves [ArticleFor [ItemName {{GiftTasteItemId}}]] [ItemName {{GiftTasteItemId}}]!$1%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
 }

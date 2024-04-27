@@ -9,7 +9,7 @@
                     "ID": "GiftTastePersonal1",
                     "Weight": 10,
                     "QuestionText": "What's your most favorite stuff?",
-                    "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,2}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Shane loved false none}}}}", // get gift taste for Shane, loved gift taste, not Shane's relative, not excluding any item
+                    "AnswerText": "{{i18n:DefaultPersonal.5{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Shane loved false none}}}}", // get gift taste for Shane, loved gift taste, not Shane's relative, not excluding any item
                     "CanRepeatQuestion": true
                 },
                 "GiftTasteRelative1": {
