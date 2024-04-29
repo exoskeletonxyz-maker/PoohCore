@@ -20,9 +20,10 @@
         },
         {
             "Name": "DoNotSuggestGiftElliott",
-            "Value":  "202-203-204-218-225-226-265-728-729-730-732-733-921-372",
+            "Value": "202-203-204-218-225-226-265-728-729-730-732-733-921-372",
             "When": 
 			{
+                "HasMod |contains= DSV.Core": true,
 				"DSV.Core/ConfigValue:JewishElliott": "true",
 				"HasMod |contains= Badger.VeganVanillaRecipes": false
 			}
@@ -32,7 +33,7 @@
         {
             "LogName": "Include json files",
             "Action": "Include",
-            "FromFile": "Data/VanillaNPCs.json, Data/Pronouns.json"
+            "FromFile": "Data/Pronouns.json, Data/VanillaNPCs.json"
         }
 ]
 }

@@ -261,7 +261,88 @@ namespace PoohCore
                                 break;
                             }
                         }
+                        
                         replacement += " |relativeCharacterName=" + relativeName;
+                        try
+                        {
+                            NPC relativeNpc = Game1.getCharacterFromName(relativeName);
+                            switch (relativeNpc.Gender)
+                            {
+                                case Gender.Female:
+                                    if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName))
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName + "]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + relativeName + "]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + relativeName + "]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + relativeName + "]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + relativeName + "]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + relativeName + "]";
+                                    }
+                                    else
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineSubject]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineObject]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FemininePossessive]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineReflexive]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineSubjectLowercase]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineObjectLowercase]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FemininePossessiveLowercase]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineReflexiveLowercase]";
+                                    }
+                                    break;
+                                case Gender.Male:
+                                    if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName))
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName + "]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + relativeName + "]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + relativeName + "]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + relativeName + "]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + relativeName + "]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + relativeName + "]";
+                                    }
+                                    else
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineSubject]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineObject]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculinePossessive]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineReflexive]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineSubjectLowercase]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineObjectLowercase]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculinePossessiveLowercase]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineReflexiveLowercase]";
+                                    }
+                                    break;
+                                default:
+                                    if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName))
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + relativeName + "]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + relativeName + "]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + relativeName + "]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + relativeName + "]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + relativeName + "]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + relativeName + "]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + relativeName + "]";
+                                    }
+                                    else
+                                    {
+                                        replacement += " |relativeSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralSubject]";
+                                        replacement += " |relativeObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralObject]";
+                                        replacement += " |relativePossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralPossessive]";
+                                        replacement += " |relativeReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralReflexive]";
+                                        replacement += " |relativeSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralSubjectLowercase]";
+                                        replacement += " |relativeObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralObjectLowercase]";
+                                        replacement += " |relativePossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralPossessiveLowercase]";
+                                        replacement += " |relativeReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralReflexiveLowercase]";
+                                    }
+                                    break;
+                            }
+                        }
+                        catch { }
                         if (relativeTitle != "" && relativeTitle != relativeDisplayName && relativeTitle != relativeName)
                         {
                             replacement += " |relativeHasSpecialTitle=" + "true";
@@ -281,6 +362,86 @@ namespace PoohCore
             if (relativeCheck != "true" && relativeCheck != "True")
             {
                 string itemId = GetOneRandomGiftTasteItem(NPCInternalName, giftTaste, excludeIdList, (11 + NPCInternalName.Length + relativeCheck.Length));
+                try
+                {
+                    NPC npc = Game1.getCharacterFromName(NPCInternalName);
+                    switch (npc.Gender)
+                    {
+                        case Gender.Female:
+                            if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName))
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName + "]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + NPCInternalName + "]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + NPCInternalName + "]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + NPCInternalName + "]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + NPCInternalName + "]";
+                            }
+                            else
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineSubject]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineObject]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FemininePossessive]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineReflexive]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineSubjectLowercase]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineObjectLowercase]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FemininePossessiveLowercase]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.FeminineReflexiveLowercase]";
+                            }
+                            break;
+                        case Gender.Male:
+                            if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName))
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName + "]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + NPCInternalName + "]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + NPCInternalName + "]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + NPCInternalName + "]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + NPCInternalName + "]";
+                            }
+                            else
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineSubject]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineObject]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculinePossessive]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineReflexive]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineSubjectLowercase]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineObjectLowercase]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculinePossessiveLowercase]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.MasculineReflexiveLowercase]";
+                            }
+                            break;
+                        default:
+                            if (Game1.content.LoadString("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName) != ("Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName))
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Subject_" + NPCInternalName + "]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Object_" + NPCInternalName + "]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Possessive_" + NPCInternalName + "]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.Reflexive_" + NPCInternalName + "]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.SubjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ObjectLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.PossessiveLowercase_" + NPCInternalName + "]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.ReflexiveLowercase_" + NPCInternalName + "]";
+                            }
+                            else
+                            {
+                                replacement += " |originalSubject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralSubject]";
+                                replacement += " |originalObject=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralObject]";
+                                replacement += " |originalPossessive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralPossessive]";
+                                replacement += " |originalReflexive=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralReflexive]";
+                                replacement += " |originalSubjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralSubjectLowercase]";
+                                replacement += " |originalObjectLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralObjectLowercase]";
+                                replacement += " |originalPossessiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralPossessiveLowercase]";
+                                replacement += " |originalReflexiveLowercase=" + "[LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.NeutralReflexiveLowercase]";
+                            }
+                            break;
+                    }
+                }
+                catch { }
                 replacement += " |GiftTasteItemId=" + itemId;
             }
             return replacement;
