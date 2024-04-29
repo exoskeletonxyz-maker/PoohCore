@@ -1,10 +1,23 @@
 {
     "Format": "2.0.0",
+    "DynamicTokens": [
+		{
+			"Name": "JodiFriends",
+			"Value": "Caroline, Caroline"
+		},
+        {
+			"Name": "JodiFriends",
+			"Value": "Caroline, Olivia",
+            "When": {
+                "HasMod": ""
+            }
+		}
+    ],
     "Changes": [
         {
             "LogName": "Include json files",
             "Action": "Include",
-            "FromFile": "Data/VanillaMarriageCandidates.json"
+            "FromFile": "Data/VanillaNPCs.json"
         }
 ]
 }
