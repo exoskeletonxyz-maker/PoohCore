@@ -1,0 +1,35 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromCSFiles",
+            "Entries": {
+                "poohnhi.MoreGiftTasteRevealDialogue.MasculineSubject": "{{i18n:MasculineSubject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.MasculineObject": "{{i18n:MasculineObject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.MasculinePossessive": "{{i18n:MasculinePossessive}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.MasculineReflexive": "{{i18n:MasculineReflexive}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.FeminineSubject": "{{i18n:FeminineSubject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.FeminineObject": "{{i18n:FeminineObject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.FemininePossessive": "{{i18n:FemininePossessive}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.FeminineReflexive": "{{i18n:FeminineReflexive}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.NeutralSubject": "{{i18n:NeutralSubject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.NeutralObject": "{{i18n:NeutralObject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.NeutralPossessive": "{{i18n:NeutralPossessive}}",
+            }
+        },
+        // Example overriding pronoun
+        {
+            "Action": "EditData",
+            "Target": "Strings/StringsFromCSFiles",
+            "Entries": {
+                "poohnhi.MoreGiftTasteRevealDialogue.Subject_Abigail": "{{i18n:NeutralSubject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.Object_Abigail": "{{i18n:NeutralObject}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.Possessive_Abigail": "{{i18n:NeutralPossessive}}",
+                "poohnhi.MoreGiftTasteRevealDialogue.Reflexive_Abigail": "{{i18n:NeutralReflexive}}"
+            },
+            "When": {
+                "NonbinaryAbigail": true
+            }
+        },
+]
+}

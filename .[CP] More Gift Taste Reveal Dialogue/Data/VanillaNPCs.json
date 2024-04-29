@@ -28,7 +28,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Sam, Sebastian}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Elliott 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Abigail 1 2 2"
                 }
             }
         },
@@ -115,7 +115,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Demetrius loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    // "Condition": "SYNCED_CHOICE day Clint 1 2 1"
+                    // "Condition": "SYNCED_CHOICE day Demetrius 1 2 1"
                 },
                 // Special: Sebastian doesn't in friends and family of Demetrius so he'll get special dialogue (add later)
                 // "GiftTasteFriend1": {
@@ -124,7 +124,7 @@
                 //     "QuestionText": "Ask for gift suggestion",
                 //     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Lucikiel, Lucikiel}} loved false none}}}}",
                 //     "CanRepeatQuestion": true,
-                //     "Condition": "SYNCED_CHOICE day Clint 1 2 2"
+                //     "Condition": "SYNCED_CHOICE day Demetrius 1 2 2"
                 // }
             }
         },
@@ -147,7 +147,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Willy loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    // "Condition": "SYNCED_CHOICE day Clint 1 2 1"
+                    // "Condition": "SYNCED_CHOICE day Willy 1 2 1"
                 },
                 // Special: maybe some custom npcs
                 // "GiftTasteFriend1": {
@@ -156,7 +156,7 @@
                 //     "QuestionText": "Ask for gift suggestion",
                 //     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Lucikiel, Lucikiel}} loved false none}}}}",
                 //     "CanRepeatQuestion": true,
-                //     "Condition": "SYNCED_CHOICE day Clint 1 2 2"
+                //     "Condition": "SYNCED_CHOICE day Willy 1 2 2"
                 // }
             }
         },
@@ -169,7 +169,7 @@
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
-                    "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false {{DoNotSuggestGiftElliott}}}}}}",
                     "CanRepeatQuestion": true
                 },
                 // Willy
@@ -471,12 +471,12 @@
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Leah loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
-                // Elliot
+                // Elliott
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false {{DoNotSuggestGiftElliott}}}}}}",
                     "CanRepeatQuestion": true,
                 }
             }

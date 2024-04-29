@@ -189,12 +189,13 @@ namespace PoohCore
                             break;
                     }
                     string item;
+                    r = Utility.CreateDaySaveRandom(Game1.stats.DaysPlayed * 10 * randomCounter * randomSeed * FinalItems.Length);
                     item = r.Choose(FinalItems);
                     // if the item chosen is in excludeIdList, choose again
                     while (Array.IndexOf(excludeIdList, item) > -1)
                     {
                         randomCounter += 1;
-                        r = Utility.CreateRandom(Game1.stats.DaysPlayed * 75 * randomCounter * randomSeed);
+                        r = Utility.CreateRandom(Game1.stats.DaysPlayed * 75 * randomCounter * randomSeed * FinalItems.Length);
                         item = r.Choose(Items);
                     }
                     return item;
@@ -222,12 +223,12 @@ namespace PoohCore
                     tryGetFiveRandom++;
                     randomSeed++;
                     if(npc.getGiftTasteForThisItem(getOneRandomItem) == ParseGiftTaste(giftTaste)-1)
-                        return getOneRandomItem.ItemId;
+                        return getOneRandomItem.QualifiedItemId;
                 }
                 while (true)
                 {
                     if (npc.getGiftTasteForThisItem(getItemFromId) == ParseGiftTaste(giftTaste) - 1)
-                        return getItemFromId.ItemId;
+                        return getItemFromId.QualifiedItemId;
                     getIDStraightFromGiftTaste = GetIDGenerator(internalNPC, giftTaste, excludeIdList, randomSeed);
                     getItemFromId = ItemRegistry.Create(getIDStraightFromGiftTaste);
                     randomSeed++;
@@ -272,14 +273,14 @@ namespace PoohCore
                             replacement += " |relativeCharacterTitle=" + relativeDisplayName;
                         }
                     }
-                    string itemId = GetOneRandomGiftTasteItem(relativeName, giftTaste, excludeIdList, 88);
+                    string itemId = GetOneRandomGiftTasteItem(relativeName, giftTaste, excludeIdList, (88 + relativeName.Length + NPCInternalName.Length));
                     replacement += " |GiftTasteItemId=" + itemId;
                 }
             }
             catch { }
             if (relativeCheck != "true" && relativeCheck != "True")
             {
-                string itemId = GetOneRandomGiftTasteItem(NPCInternalName, giftTaste, excludeIdList, 11);
+                string itemId = GetOneRandomGiftTasteItem(NPCInternalName, giftTaste, excludeIdList, (11 + NPCInternalName.Length + relativeCheck.Length));
                 replacement += " |GiftTasteItemId=" + itemId;
             }
             return replacement;

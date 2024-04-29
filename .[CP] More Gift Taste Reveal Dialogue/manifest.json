@@ -3,7 +3,7 @@
     "Author": "Pooh",
     "Version": "1.0.0",
     "Description": "More Gift Taste Reveal Dialogue",
-    "UniqueID": "poohnhi.MoreGiftTasteRevealDialogue.CP",
+    "UniqueID": "poohnhi.MoreGiftTasteRevealDialogue",
     "UpdateKeys": [ "???" ],
     "ContentPackFor": {
         "UniqueID": "Pathoschild.ContentPatcher"

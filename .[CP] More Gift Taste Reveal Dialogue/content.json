@@ -1,23 +1,38 @@
 {
     "Format": "2.0.0",
     "DynamicTokens": [
+        // Testing compatibility with SVE
 		{
 			"Name": "JodiFriends",
-			"Value": "Caroline, Caroline"
+			"Value": "Caroline"
 		},
         {
 			"Name": "JodiFriends",
-			"Value": "Caroline, Olivia",
+			"Value": "{{Merge: {{JodiFriends}}, Olivia}}",
             "When": {
-                "HasMod": ""
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
             }
-		}
+		},
+        // Testing compatibility with DSV Elliott
+        {
+            "Name": "DoNotSuggestGiftElliott",
+            "Value": "none"
+        },
+        {
+            "Name": "DoNotSuggestGiftElliott",
+            "Value":  "202-203-204-218-225-226-265-728-729-730-732-733-921-372",
+            "When": 
+			{
+				"DSV.Core/ConfigValue:JewishElliott": "true",
+				"HasMod |contains= Badger.VeganVanillaRecipes": false
+			}
+        },
     ],
     "Changes": [
         {
             "LogName": "Include json files",
             "Action": "Include",
-            "FromFile": "Data/VanillaNPCs.json"
+            "FromFile": "Data/VanillaNPCs.json, Data/Pronouns.json"
         }
 ]
 }

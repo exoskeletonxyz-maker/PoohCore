@@ -1,4 +1,32 @@
 {
+    // [LocalizedText Strings\\StringsFromCSFiles:poohnhi.MoreGiftTasteRevealDialogue.CP_Abigail]
+    // For overriding vanilla pronouns
+    "MasculineSubject": "He",
+    "MasculineObject": "Him",
+    "MasculinePossessive": "His",
+    "MasculineReflexive": "Himself",
+    "FeminineSubject": "She",
+    "FeminineObject": "Her",
+    "FemininePossessive": "Her",
+    "FeminineReflexive": "Herself",
+    "NeutralSubject": "They",
+    "NeutralObject": "Them",
+    "NeutralPossessive": "Their",
+    "NeutralReflexive": "Themself",
+
+    // "MasculineSubjectLowercase": "he",
+    // "MasculineObjectLowercase": "him",
+    // "MasculinePossessiveLowercase": "his",
+    // "MasculineReflexiveLowercase": "himself",
+    // "FeminineSubjectLowercase": "she",
+    // "FeminineObjectLowercase": "her",
+    // "FemininePossessiveLowercase": "her",
+    // "FeminineReflexiveLowercase": "herself",
+    // "NeutralSubjecLowercase": "they",
+    // "NeutralObjectLowercase": "them",
+    // "NeutralPossessiveLowercase": "their",
+    // "NeutralReflexiveLowercase": "themself",
+
     // Answer when it's about themself
     // Negative
     "DefaultPersonalNegative.1": "Hmm, [ArticleFor [ItemName {{GiftTasteItemId}}]] '[ItemName {{GiftTasteItemId}}]' wouldn't be so bad... No, nevermind. You didn't hear anything.%revealtaste:{{originalCharacterName}}:{{GiftTasteItemId}}",
