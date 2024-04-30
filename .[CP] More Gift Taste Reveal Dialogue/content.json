@@ -1,11 +1,48 @@
 {
     "Format": "2.0.0",
+    "ConfigSchema": {
+        "MinHeartSelfSuggest": {
+           "AllowValues": "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+           "Default": "0"
+        },
+        "MinHeartFriendSuggest": {
+            "AllowValues": "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+            "Default": "2"
+        }
+    },
     "DynamicTokens": [
-        // Testing compatibility with SVE
+        // Testing compatibility with mods
+        {
+			"Name": "AlexFriends",
+			"Value": "Haley" // Maybe Dusty if NPC Dusty
+		},
+        // Linus is friend with Wizard
+		{
+			"Name": "LinusFriends",
+			"Value": "Wizard"
+		},
+        // Will start suggesting gift taste for Leo when he moved to the valley
+        {  
+			"Name": "LinusFriends",
+			"Value": "{{Merge: {{LinusFriends}}, Leo}}",
+            "When": {
+                "HasFlag": "leoMoved"
+            }
+		},
+        // Linus is friend with Jessie from Juliet and Jessie
+        {  
+			"Name": "LinusFriends",
+			"Value": "{{Merge: {{LinusFriends}}, Jessie}}",
+            "When": {
+                "HasMod": "LemurKat.JulietHouse.NPC"
+            }
+		},
+        // Jodi is friend with Caroline
 		{
 			"Name": "JodiFriends",
 			"Value": "Caroline"
 		},
+        // Jodi is friend with Olivia from SVE
         {
 			"Name": "JodiFriends",
 			"Value": "{{Merge: {{JodiFriends}}, Olivia}}",
@@ -13,6 +50,116 @@
                 "HasMod": "FlashShifter.StardewValleyExpandedCP"
             }
 		},
+        // Caroline is friend with Jodi
+		{
+			"Name": "CarolineFriends",
+			"Value": "Jodi"
+		},
+        // Caroline is friend with Olivia from SVE
+        {
+			"Name": "CarolineFriends",
+			"Value": "{{Merge: {{CarolineFriends}}, Olivia}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+		},
+        {
+			"Name": "ElliottFriends",
+			"Value": "Leah"
+		},
+        {
+			"Name": "ElliottFriends",
+			"Value": "{{Merge: {{ElliottFriends}}, Nova.Dylan}}",
+            "When": {
+                "HasMod": "TenebrousNova.EliDylan.CP"
+            }
+		},
+        {
+			"Name": "WizardFriends",
+			"Value": "Linus"
+		},
+        {
+			"Name": "WizardFriends",
+			"Value": "{{Merge: {{WizardFriends}}, MarlonFay}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+		},
+        {
+			"Name": "WizardFriends",
+			"Value": "{{Merge: {{WizardFriends}}, Morgan}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=5978924": "true" // After Morgan intro event
+            }
+		},
+        {
+			"Name": "WizardFriends",
+			"Value": "{{Merge: {{WizardFriends}}, Lance}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=6951321": "true" // After Lance is working for the Guild
+            }
+		},
+        // SVE
+        {
+            "Name": "ApplesHere",
+            "Value": "{{HasSeenEvent: currentPlayer, hostPlayer |contains=7775927}}"
+        },
+        {
+			"Name": "AndyFriends",
+			"Value": "George, Susan",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+		},
+        {
+			"Name": "AndyFriends",
+			"Value": "{{Merge: {{AndyFriends}}, MorrisTod}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=191393": "false" // Have not seen Morris ditch event
+            }
+		},
+        {
+			"Name": "MarlonFayFriends",
+			"Value": "Wizard",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+		},
+        {
+			"Name": "MarlonFayFriends",
+			"Value": "{{Merge: {{MarlonFayFriends}}, Krobus}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=1090501": "true" // After player meet Krobus intro
+            }
+		},
+        {
+			"Name": "MarlonFayFriends",
+			"Value": "{{Merge: {{MarlonFayFriends}}, Lance}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=6951321": "true" // After Lance is working for the Guild
+            }
+		},
+        {
+			"Name": "SophiaFriends",
+			"Value": "Victor",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+            }
+		},
+        {
+			"Name": "SophiaFriends",
+			"Value": "{{Merge: {{SophiaFriends}}, Scarlett}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=3691371": "true"
+            }
+		},
+
         // Testing compatibility with DSV Elliott
         {
             "Name": "DoNotSuggestGiftElliott",
@@ -34,6 +181,22 @@
             "LogName": "Include json files",
             "Action": "Include",
             "FromFile": "Data/Pronouns.json, Data/VanillaNPCs.json"
+        },
+        {
+            "LogName": "Include ES json files",
+            "Action": "Include",
+            "FromFile": "Data/ESNPCs.json",
+            "When": {
+                "HasMod": "Lemurkat.EastScarpNPCs.CP"
+            }
+        },
+        {
+            "LogName": "Include SVE json files",
+            "Action": "Include",
+            "FromFile": "Data/SVENPCs.json",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
         }
 ]
 }

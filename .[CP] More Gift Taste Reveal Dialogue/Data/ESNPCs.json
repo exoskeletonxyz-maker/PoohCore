@@ -1,0 +1,26 @@
+{
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/Questions",
+            "TargetField": ["RodneyOBrien"],
+            "Entries": {
+                "GiftTastePersonal1": {
+                    "ID": "GiftTastePersonal1",
+                    "Weight": 15,
+                    "QuestionText": "Ask for gift taste",
+                    "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:RodneyOBrien loved false none}}}}",
+                    "CanRepeatQuestion": true
+                },
+                // Friends Gus, Gunther, Leah // Elliott as nephew. Include Elliott to relative dialogue after his daughter and nana are added as NPCs
+                "GiftTasteFriend1": {
+                    "ID": "GiftTasteFriend1",
+                    "Weight": 10,
+                    "QuestionText": "Ask for gift suggestion",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{RodneyOBrienFriends}} loved false none}}}}",
+                    "CanRepeatQuestion": true
+                }
+            }
+        },
+    ]
+}

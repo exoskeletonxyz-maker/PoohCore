@@ -10,7 +10,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Abigail loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Abigail {{MinHeartSelfSuggest}}"
                 },
                 // Mom Caroline, Dad Pierre
                 "GiftTasteRelative1": {
@@ -19,7 +20,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Abigail loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Abigail 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Abigail 1 2 1, PLAYER_HEARTS Current Abigail {{MinHeartFriendSuggest}}"
                 },
                 // Friends Sam, Sebastian
                 "GiftTasteFriend1": {
@@ -28,7 +29,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Sam, Sebastian}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Abigail 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Abigail 1 2 2, PLAYER_HEARTS Current Abigail {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -42,7 +43,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Caroline loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Caroline {{MinHeartSelfSuggest}}"
                 },
                 // Husband Pierre, Abigail
                 "GiftTasteRelative1": {
@@ -51,16 +53,16 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Caroline loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Caroline 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Caroline 1 2 1, PLAYER_HEARTS Current Caroline {{MinHeartFriendSuggest}}"
                 },
                 // Friends Jodi
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Jodi, Jodi}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{CarolineFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Caroline 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Caroline 1 2 2, PLAYER_HEARTS Current Caroline {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -74,7 +76,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Clint loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Clint {{MinHeartSelfSuggest}}"
                 },
                 // Emily
                 "GiftTasteRelative1": {
@@ -83,8 +86,8 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Clint loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    // "Condition": "SYNCED_CHOICE day Clint 1 2 1"
-                },
+                    "Condition": "SYNCED_CHOICE day Clint 1 2 1, PLAYER_HEARTS Current Clint {{MinHeartFriendSuggest}}"
+                }
                 // Friends maybe Lucikiel if installed after the introduction event (add later)
                 // "GiftTasteFriend1": {
                 //     "ID": "GiftTasteFriend1",
@@ -106,7 +109,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Demetrius loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Demetrius {{MinHeartSelfSuggest}}"
                 },
                 // Robin Maru
                 "GiftTasteRelative1": {
@@ -115,7 +119,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Demetrius loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    // "Condition": "SYNCED_CHOICE day Demetrius 1 2 1"
+                    "Condition": "PLAYER_HEARTS Current Demetrius {{MinHeartFriendSuggest}}"
                 },
                 // Special: Sebastian doesn't in friends and family of Demetrius so he'll get special dialogue (add later)
                 // "GiftTasteFriend1": {
@@ -138,16 +142,17 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Willy loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Willy {{MinHeartSelfSuggest}}"
                 },
-                // Elliot
+                // Elliott
                 "GiftTasteRelative1": {
                     "ID": "GiftTasteRelative1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Willy loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    // "Condition": "SYNCED_CHOICE day Willy 1 2 1"
+                    "Condition": "PLAYER_HEARTS Current Willy {{MinHeartFriendSuggest}}"
                 },
                 // Special: maybe some custom npcs
                 // "GiftTasteFriend1": {
@@ -170,7 +175,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false {{DoNotSuggestGiftElliott}}}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Elliott {{MinHeartSelfSuggest}}"
                 },
                 // Willy
                 "GiftTasteRelative1": {
@@ -179,16 +185,16 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Elliott 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Elliott 1 2 1, PLAYER_HEARTS Current Elliott {{MinHeartFriendSuggest}}"
                 },
                 // Special: maybe add Dylan after the event where he make friend with him and Leah
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Leah, Leah}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{ElliottFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Elliott 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Elliott 1 2 2, PLAYER_HEARTS Current Elliott {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -202,7 +208,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Emily loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Emily {{MinHeartSelfSuggest}}"
                 },
                 // Haley
                 "GiftTasteRelative1": {
@@ -211,7 +218,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Emily loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Emily 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Emily 1 2 1, PLAYER_HEARTS Current Emily {{MinHeartFriendSuggest}}"
                 },
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
@@ -219,7 +226,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Sandy, Gus, Shane}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Emily 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Emily 1 2 2, PLAYER_HEARTS Current Emily {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -233,7 +240,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Evelyn loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Evelyn {{MinHeartSelfSuggest}}"
                 },
                 // George Alex
                 "GiftTasteRelative1": {
@@ -242,6 +250,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Evelyn loved true none}}}}",
                     "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Evelyn {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -255,7 +264,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:George loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current George {{MinHeartSelfSuggest}}"
                 },
                 // Evelyn Alex
                 "GiftTasteRelative1": {
@@ -264,6 +274,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:George loved true none}}}}",
                     "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current George {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -277,7 +288,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Gus loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Gus {{MinHeartSelfSuggest}}"
                 },
                 // Emily Pam
                 "GiftTasteRelative1": {
@@ -286,6 +298,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Gus loved true none}}}}",
                     "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Gus {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -299,7 +312,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Haley loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Haley {{MinHeartSelfSuggest}}"
                 },
                 // Emily
                 "GiftTasteRelative1": {
@@ -308,7 +322,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Haley loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Haley 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Haley 1 2 1, PLAYER_HEARTS Current Haley {{MinHeartFriendSuggest}}"
                 },
                 // Alex (maybe add Jeric if installed)
                 "GiftTasteFriend1": {
@@ -317,7 +331,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Alex, Alex}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Haley 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Haley 1 2 2, PLAYER_HEARTS Current Haley {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -331,7 +345,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Harvey loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Harvey {{MinHeartSelfSuggest}}"
                 },
                 // Maru
                 "GiftTasteFriend1": {
@@ -339,7 +354,8 @@
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Maru loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Harvey {{MinHeartFriendSuggest}}"
                 }
                 // Harvey doesn't have relative
                 // "GiftTasteRelative1": {
@@ -361,7 +377,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Jas loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Jas {{MinHeartSelfSuggest}}"
                 },
                 // Vincent only - maybe add special case for Shane and Marnie?
                 "GiftTasteRelative1": {
@@ -369,7 +386,8 @@
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Jas loved true none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Jas {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -383,7 +401,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Jodi loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Jodi {{MinHeartSelfSuggest}}"
                 },
                 // Sam Vincent Kent
                 "GiftTasteRelative1": {
@@ -392,16 +411,16 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Jodi loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Jodi 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Jodi 1 2 1, PLAYER_HEARTS Current Jodi {{MinHeartFriendSuggest}}"
                 },
                 // Caroline
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Caroline, Caroline}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{JodiFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Jodi 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Jodi 1 2 2, PLAYER_HEARTS Current Jodi {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -415,7 +434,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Alex loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Alex {{MinHeartSelfSuggest}}"
                 },
                 // George, Evelyn
                 "GiftTasteRelative1": {
@@ -424,16 +444,16 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Alex loved true none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Alex 1 2 1"
+                    "Condition": "SYNCED_CHOICE day Alex 1 2 1, PLAYER_HEARTS Current Alex {{MinHeartFriendSuggest}}"
                 },
-                // Haley, maybe Dusty if NPC Dusty
+                // Haley
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Haley, Haley}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{AlexFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "SYNCED_CHOICE day Alex 1 2 2"
+                    "Condition": "SYNCED_CHOICE day Alex 1 2 2, PLAYER_HEARTS Current Alex {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -447,7 +467,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Kent loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Kent {{MinHeartSelfSuggest}}"
                 },
                 // Jodi Sam Vincent
                 "GiftTasteRelative1": {
@@ -456,6 +477,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Kent loved true none}}}}",
                     "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Kent {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -469,7 +491,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Leah loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Leah {{MinHeartSelfSuggest}}"
                 },
                 // Elliott
                 "GiftTasteFriend1": {
@@ -478,6 +501,7 @@
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Elliott loved false {{DoNotSuggestGiftElliott}}}}}}",
                     "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Leah {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -491,7 +515,8 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Lewis loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Lewis {{MinHeartSelfSuggest}}"
                 },
                 // Marnie
                 "GiftTasteRelative1": {
@@ -499,7 +524,8 @@
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
                     "AnswerText": "{{i18n:DefaultRelative.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Lewis loved true none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Lewis {{MinHeartFriendSuggest}}"
                 }
             }
         },
@@ -513,24 +539,16 @@
                     "Weight": 15,
                     "QuestionText": "Ask for gift taste",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Linus loved false none}}}}",
-                    "CanRepeatQuestion": true
+                    "CanRepeatQuestion": true,
+                    "Condition": "PLAYER_HEARTS Current Linus {{MinHeartSelfSuggest}}"
                 },
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Wizard}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{LinusFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true,
-                    "Condition": "!PLAYER_HAS_MAIL Host leoMoved"
-                },
-                // Will start suggesting gift taste for Leo when he moved to the valley
-                "GiftTasteFriend2": {
-                    "ID": "GiftTasteFriend2",
-                    "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Wizard, Leo}} loved false none}}}}",
-                    "CanRepeatQuestion": true,
-                    "Condition": "PLAYER_HAS_MAIL Host leoMoved"
+                    "Condition": ""
                 }
             }
         },
@@ -817,7 +835,7 @@
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
                     "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Linus, Linus}} loved false none}}}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{WizardFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
             }
