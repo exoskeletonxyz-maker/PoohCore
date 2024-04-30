@@ -1,7 +1,7 @@
 # Daily Dialogue Progression Example
 
 ## What's this?
-A small content pack that ensures all dialogues are seen at least once from a pre-made pool of dialogues, so instead of lost to the Void when the NPC got befriended too fast, low-heart dialogues can still be seen. Will need my framework [PoohCore](https://github.com/poohnhi/StardewValleyModdingTools/tree/master/PoohCoreSourceCode/PoohCore) to works. To test it yourself, [click here to download](https://github.com/poohnhi/StardewValleyModdingTools/raw/master/DailyDialogueProgressionExample.zip) this example.
+A small content pack that ensures all dialogues are seen at least once from a pre-made pool of dialogues, so instead of lost to the Void when the NPC got befriended too fast, low-heart dialogues can still be seen. Will need my framework [PoohCore](https://github.com/poohnhi/PoohCore/releases) to work. To test it yourself, [click here to download](https://github.com/poohnhi/PoohCore/raw/main/.%5BCP%5D%20Daily%20Dialogue%20Progression%20Example/%5BCP%5D%20Daily%20Dialogue%20Progression%20Example.zip) the zip file.
 
 ## How does it work?
 - Uses a flag to track daily NPC conversations.
@@ -42,7 +42,7 @@ A small content pack that ensures all dialogues are seen at least once from a pr
 ## How can I test it?
 I made a NPC with 5 different dialogues as example. Step outside of the farm house (the default farm) and you'll see my NPC "Winnie". You can talk to her to see how this work. She'll only switch to the next dialogue in the i18n dialogue pool if you talk to her, so even if you sleep through several days, she won't change to next dialogue if you didn't talk to her. After saying all 5 dialogues, the next time you talk to her she will randomly pick one out of the 5 dialogues that available. 
 
-This kind of implement is expandable, if you add more dialogues later as an update for your mod, the NPC will stop randomly picking - they will continue the progress again at the 6th dialogue and so on.
+This way of implement is expandable, if you add more dialogues later as an update for your mod, the NPC will stop randomly picking - they will continue the progress again at the 6th dialogue and so on.
 
 ## How can I expand this?
 
