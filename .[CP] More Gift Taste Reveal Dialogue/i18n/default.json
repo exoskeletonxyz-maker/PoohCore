@@ -4,6 +4,8 @@
     "config.MinHeartFriendSuggest.name": "Other Suggest",
     "config.MinHeartFriendSuggest.description": "The minimum heart required for player to ask for other NPC's gift taste suggestion. Default 2.",
 
+    "AskForGiftSuggestion": "Ask for gift suggestion",
+    "AskForGiftTaste": "Ask for gift taste",
     // For overriding vanilla pronouns
     "MasculineSubject": "He",
     "MasculineObject": "Him",

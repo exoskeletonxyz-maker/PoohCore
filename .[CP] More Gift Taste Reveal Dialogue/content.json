@@ -11,11 +11,191 @@
         }
     },
     "DynamicTokens": [
-        // Testing compatibility with mods
+        // Vanilla
+
+        // Abigail is friend with Sam, Sebastian
+		{
+			"Name": "AbigailFriends",
+			"Value": "Sam, Sebastian"
+		},
+
+        // Caroline is friend with Jodi
+        {
+            "Name": "CarolineFriends",
+            "Value": "Jodi"
+        },
+        // Caroline is friend with Olivia from SVE
+        {
+            "Name": "CarolineFriends",
+            "Value": "{{Merge: {{CarolineFriends}}, Olivia}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+        },
+
+        // Clint is friend with Emily
+        {
+            "Name": "ClintFriends",
+            "Value": "Emily"
+        },
+
+        // Some Trenton family drama here
+
+        {
+			"Name": "DemetriusFriends",
+			"Value": "Placeholder"
+		},
+
+        // Willy is friend with Elliott
+        {
+			"Name": "WillyFriends",
+			"Value": "Elliott"
+		},
+
+        // Elliott is friend with Leah
+        {
+			"Name": "ElliottFriends",
+			"Value": "Leah"
+		},
+        // Elliott is Rodney's nephew from Creatives Differences
+        {
+			"Name": "ElliottFriends",
+			"Value": "{{Merge: {{ElliottFriends}}, RodneyOBrien}}",
+            "When": {
+                "HasMod": "TheFrenchDodo.RodneyOBrien"
+            }
+		},
+        // Elliott is friend with Dylan from Eli & Dylan
+        {
+			"Name": "ElliottFriends",
+			"Value": "{{Merge: {{ElliottFriends}}, Nova.Dylan}}",
+            "When": {
+                "HasMod": "TenebrousNova.EliDylan.CP" // At the start or after the event where he make friend with him and Leah?
+            }
+		},
+
+        // Emily is friend with Sandy, Gus, Shane
+        {
+			"Name": "EmilyFriends",
+			"Value": "Sandy, Gus, Shane"
+		},
+        // Emily is friend with Eli from Eli & Dylan
+        {
+			"Name": "EmilyFriends",
+			"Value": "{{Merge: {{EmilyFriends}}, Nova.Eli}}",
+            "When": {
+                "HasMod": "TenebrousNova.EliDylan.CP"
+            }
+		},
+
+        // Gus is friend with Emily and Pam
+		{
+			"Name": "GusFriends",
+			"Value": "Emily, Pam"
+		},
+        // Gus is friend with Rodney from Creatives Differences
+        {
+			"Name": "GusFriends",
+			"Value": "{{Merge: {{GusFriends}}, RodneyOBrien}}",
+            "When": {
+                "HasMod": "TheFrenchDodo.RodneyOBrien"
+            }
+		},
+
+        // Haley is friend with Alex
+		{
+			"Name": "HaleyFriends",
+			"Value": "Alex"
+		},
+
+
+        // Harvey is friend with Maru
+        {
+			"Name": "HarveyFriends",
+			"Value": "Maru"
+		},
+        // Harvey is friend with Nora from The Herpetologist
+        {
+			"Name": "HarveyFriends",
+			"Value": "{{Merge: {{HarveyFriends}}, Nora}}",
+            "When": {
+                "HasMod": "Bagi.Nora.CP"
+            }
+		},
+        
+        // Jas is friend with Vincent
+        {
+			"Name": "JasFriends",
+			"Value": "Vincent"
+		},
+        // Jas is friend with Leo after Leo moved
+        {
+			"Name": "JasFriends",
+			"Value": "{{Merge: {{JasFriends}}, Leo}}",
+            "When": {
+                "HasFlag": "leoMoved"
+            }
+		},
+        // Jas is friend with Eloise from ES
+        {
+			"Name": "JasFriends",
+			"Value": "{{Merge: {{JasFriends}}, Eloise}}",
+            "When": {
+                "HasMod": "Lemurkat.EastScarpNPCs.CP"
+            }
+		},
+        // Jas is friend with Morgan after Morgan intro event
+        {
+			"Name": "JasFriends",
+			"Value": "{{Merge: {{JasFriends}}, Morgan}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=5978924": "true"
+            }
+        },
+
+        // Jodi is friend with Caroline
+        {
+            "Name": "JodiFriends",
+            "Value": "Caroline"
+        },
+        // Jodi is friend with Olivia from SVE
+        {
+            "Name": "JodiFriends",
+            "Value": "{{Merge: {{JodiFriends}}, Olivia}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+        },
+
+        // Alex is friend with Haley
         {
 			"Name": "AlexFriends",
-			"Value": "Haley" // Maybe Dusty if NPC Dusty
+			"Value": "Haley"
 		},
+
+        // Leah is friend with Elliott
+        {
+            "Name": "LeahFriends",
+            "Value": "Elliott"
+        },
+        // Leah is friend with Rodney from Creatives Differences
+        {
+            "Name": "LeahFriends",
+            "Value": "{{Merge: {{LeahFriends}}, RodneyOBrien}}",
+            "When": {
+                "HasMod": "TheFrenchDodo.RodneyOBrien"
+            }
+        },
+        // Leah is friend with Dylan from Eli & Dylan
+        {
+            "Name": "LeahFriends",
+            "Value": "{{Merge: {{LeahFriends}}, Nova.Dylan}}",
+            "When": {
+                "HasMod": "TenebrousNova.EliDylan.CP"
+            }
+        },
+
         // Linus is friend with Wizard
 		{
 			"Name": "LinusFriends",
@@ -37,43 +217,53 @@
                 "HasMod": "LemurKat.JulietHouse.NPC"
             }
 		},
-        // Jodi is friend with Caroline
+
+        // Maru is friend with Wizard
 		{
-			"Name": "JodiFriends",
-			"Value": "Caroline"
+			"Name": "MaruFriends",
+			"Value": "Harvey, Penny"
 		},
-        // Jodi is friend with Olivia from SVE
-        {
-			"Name": "JodiFriends",
-			"Value": "{{Merge: {{JodiFriends}}, Olivia}}",
-            "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP"
-            }
-		},
-        // Caroline is friend with Jodi
+
+        // Penny is friend with Wizard
 		{
-			"Name": "CarolineFriends",
-			"Value": "Jodi"
+			"Name": "PennyFriends",
+			"Value": "Sam, Vincent, Jas, Maru"
 		},
-        // Caroline is friend with Olivia from SVE
+
+        // Sam is friend with Sebastian, Abigail, Penny 
+		{
+			"Name": "SamFriends",
+			"Value": "Sebastian, Abigail, Penny"
+		},
+
         {
-			"Name": "CarolineFriends",
-			"Value": "{{Merge: {{CarolineFriends}}, Olivia}}",
+			"Name": "VincentFriends",
+			"Value": "Jas"
+		},
+        {
+			"Name": "VincentFriends",
+			"Value": "{{Merge: {{VincentFriends}}, Leo}}",
             "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+                "HasFlag": "leoMoved"
             }
 		},
         {
-			"Name": "ElliottFriends",
-			"Value": "Leah"
-		},
-        {
-			"Name": "ElliottFriends",
-			"Value": "{{Merge: {{ElliottFriends}}, Nova.Dylan}}",
+			"Name": "VincentFriends",
+			"Value": "{{Merge: {{VincentFriends}}, Eloise}}",
             "When": {
-                "HasMod": "TenebrousNova.EliDylan.CP"
+                "HasMod": "Lemurkat.EastScarpNPCs.CP"
             }
 		},
+
+        {
+			"Name": "VincentFriends",
+			"Value": "{{Merge: {{VincentFriends}}, Morgan}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasSeenEvent |contains=5978924": "true" // After Morgan intro event
+            }
+        },
+        
         {
 			"Name": "WizardFriends",
 			"Value": "Linus"
@@ -101,10 +291,125 @@
                 "HasSeenEvent |contains=6951321": "true" // After Lance is working for the Guild
             }
 		},
+
+        {
+			"Name": "LeoFriends",
+			"Value": "Linus, Vincent, Jas"
+		},
+        {
+			"Name": "LeoFriends",
+			"Value": "{{Merge: {{VincentFriends}}, Eloise}}",
+            "When": {
+                "HasMod": "Lemurkat.EastScarpNPCs.CP"
+            }
+		},
+
+        {
+			"Name": "AideenFriends",
+			"Value": "Jacob"
+		},
+        {
+			"Name": "AideenFriends",
+			"Value": "{{Merge: {{AideenFriends}}, Mateo}}",
+            "When": {
+                "HasMod": "DN.SnS"
+            }
+		},
+        
+        {
+			"Name": "EloiseFriends",
+			"Value": "Vincent, Jas, Rosa"
+		},
+
+        {
+			"Name": "EloiseFriends",
+			"Value": "{{Merge: {{EloiseFriends}}, Leo}}",
+            "When": {
+                "HasFlag": "leoMoved"
+            }
+		},
+        {
+			"Name": "EloiseFriends",
+			"Value": "{{Merge: {{EloiseFriends}}, Hector}}",
+            "When": {
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch2.Hector.6"
+            }
+		},
+        {
+			"Name": "JacobFriends",
+			"Value": "Rosa, Aideen"
+		},
+
+        {
+			"Name": "JacobFriends",
+			"Value": "{{Merge: {{JacobFriends}}, Hector}}",
+            "When": {
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch2.Hector.6"
+            }
+		},
+        {
+			"Name": "RosaFriends",
+			"Value": "Jacob, Eloise, ToriLK"
+		},
+        {
+			"Name": "RosaFriends",
+			"Value": "{{Merge: {{RosaFriends}}, Juliet}}",
+            "When": {
+                "HasMod": "LemurKat.JulietHouse.NPC"
+            }
+		},
+        {
+			"Name": "ToriLKFriends",
+			"Value": "Rosa"
+		},
+        {
+			"Name": "ToriLKFriends",
+			"Value": "{{Merge: {{ToriLKFriends}}, Nora}}",
+            "When": {
+                "HasMod": "Bagi.Nora.CP"
+            }
+		},
+        
+        {
+			"Name": "RodneyOBrienFriends",
+			"Value": "Gus, Leah, Elliott"
+		},
+        {
+			"Name": "RodneyOBrienFriends",
+			"Value": "{{Merge: {{RodneyOBrienFriends}}, GuntherSilvian}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+		},
+        {
+			"Name": "NoraFriends",
+			"Value": "ToriLK, Maru"
+		},
+        {
+			"Name": "NoraFriends",
+			"Value": "{{Merge: {{NoraFriends}}, Nova.Eli, Nova.Dylan}}",
+            "When": {
+                "HasMod": "TenebrousNova.EliDylan.CP"
+            }
+		},
+        {
+			"Name": "NoraFriends",
+			"Value": "{{Merge: {{NoraFriends}}, Mateo}}",
+            "When": {
+                "HasMod": "DN.SnS"
+            }
+		},
+        // ES
+
         // SVE
         {
             "Name": "ApplesHere",
-            "Value": "{{HasSeenEvent: currentPlayer, hostPlayer |contains=7775927}}"
+            "Value": "{{HasSeenEvent: currentPlayer, hostPlayer |contains=7775927}}",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
         },
         {
 			"Name": "AndyFriends",
@@ -148,7 +453,7 @@
 			"Name": "SophiaFriends",
 			"Value": "Victor",
             "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP",
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
             }
 		},
         {

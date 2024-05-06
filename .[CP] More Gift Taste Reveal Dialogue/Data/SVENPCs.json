@@ -8,7 +8,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Andy loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -16,8 +16,8 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{AndyFriends}} loved false none}}}}",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{AndyFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
             }
@@ -30,7 +30,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Apples loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -38,7 +38,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Krobus, Krobus}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -55,7 +55,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Claire loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -63,7 +63,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Martin, Martin}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -77,7 +77,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:GuntherSilvian loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -85,7 +85,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Clint, Gus, Lewis, Penny, Willy, MarlonFay}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -99,7 +99,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Lance loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -107,7 +107,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: MarlonFay, MarlonFay}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -124,7 +124,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:MarlonFay loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -132,8 +132,8 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{MarlonFayFriends}} loved false none}}}}",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{MarlonFayFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
             }
@@ -146,7 +146,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Martin loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -154,7 +154,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Claire loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -168,7 +168,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Morgan loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -176,7 +176,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Wizard, Jas, Vincent}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -193,7 +193,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:MorrisTod loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -201,7 +201,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Andy loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -218,7 +218,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:MorrisTod loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -226,7 +226,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:Jodi, Caroline, Pierre, Victor}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -240,7 +240,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Scarlett loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -248,7 +248,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Sophia loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -265,7 +265,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Sophia loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -273,8 +273,8 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
-                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{SophiaFriends}} loved false none}}}}",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
+                    "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random:{{SophiaFriends}}}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
             }
@@ -287,7 +287,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Susan loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -295,7 +295,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Andy, Lewis, Robin}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
@@ -309,7 +309,7 @@
                 "GiftTastePersonal1": {
                     "ID": "GiftTastePersonal1",
                     "Weight": 15,
-                    "QuestionText": "Ask for gift taste",
+                    "QuestionText": "{{i18n:AskForGiftTaste}}",
                     "AnswerText": "{{i18n:DefaultPersonal.{{Random:{{Range:1,12}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:Victor loved false none}}}}",
                     "CanRepeatQuestion": true
                 },
@@ -318,7 +318,7 @@
                 "GiftTasteFriend1": {
                     "ID": "GiftTasteFriend1",
                     "Weight": 10,
-                    "QuestionText": "Ask for gift suggestion",
+                    "QuestionText": "{{i18n:AskForGiftSuggestion}}",
                     "AnswerText": "{{i18n:DefaultFriend.{{Random:{{Range:1,11}}}}{{poohnhi.PoohCore/GetGiftTasteCPTokenFromSomeOne:{{Random: Sophia, Abigail, Sam, Sebastian}} loved false none}}}}",
                     "CanRepeatQuestion": true
                 }
