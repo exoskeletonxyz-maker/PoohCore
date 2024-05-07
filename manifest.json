@@ -1,11 +1,11 @@
 {
   "Name": "PoohCore",
   "Author": "Pooh",
-  "Version": "1.0.0-alpha",
-  "Description": "PoohCore",
+  "Version": "1.0.0",
+  "Description": "PoohCore - a framework.",
   "UniqueID": "poohnhi.PoohCore",
   "EntryDll": "PoohCore.dll",
-  "UpdateKeys": [ "" ],
+  "UpdateKeys": [ "Nexus:22941" ],
   "Dependencies": [
     {
       "UniqueID": "Pathoschild.ContentPatcher",
