@@ -1,4 +1,5 @@
 {
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
     "Format": "2.0.0",
     "ConfigSchema": {
         "MinHeartSelfSuggest": {
@@ -12,7 +13,44 @@
     },
     "DynamicTokens": [
         // Vanilla
-
+        {
+            "Name": "MarlonInternalName",
+            "Value": "None"
+        },
+        {
+            "Name": "MarlonInternalName",
+            "Value": "Marlon",
+            "When": {
+                "HasMod |contains= FlashShifter.StardewValleyExpandedCP": "false",
+                "Hearts:Marlon": "{{Range:0, 14}}" // how to check this exactly?
+            }
+        },
+        {
+            "Name": "MarlonInternalName",
+            "Value": "MarlonFay",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+        },
+        {
+            "Name": "GuntherInternalName",
+            "Value": "None"
+        },
+        {
+            "Name": "GuntherInternalName",
+            "Value": "Gunther", 
+            "When": {
+                "HasMod |contains= FlashShifter.StardewValleyExpandedCP": "false",
+                "Hearts:Gunther": "{{Range:0, 14}}"  // how to check this exactly?
+            }
+        },
+        {
+            "Name": "GuntherInternalName",
+            "Value": "GuntherSilvian",
+            "When": {
+                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+            }
+        },
         // Abigail is friend with Sam, Sebastian
 		{
 			"Name": "AbigailFriends",
@@ -270,9 +308,9 @@
 		},
         {
 			"Name": "WizardFriends",
-			"Value": "{{Merge: {{WizardFriends}}, MarlonFay}}",
+			"Value": "{{Merge: {{WizardFriends}}, {{MarlonInternalName}}}}",
             "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+                "MarlonInternalName|contains=None": "false"
             }
 		},
         {
@@ -312,7 +350,8 @@
 			"Name": "AideenFriends",
 			"Value": "{{Merge: {{AideenFriends}}, Mateo}}",
             "When": {
-                "HasMod": "DN.SnS"
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch1.Mateo.0"
             }
 		},
         
@@ -378,14 +417,14 @@
 		},
         {
 			"Name": "RodneyOBrienFriends",
-			"Value": "{{Merge: {{RodneyOBrienFriends}}, GuntherSilvian}}",
+			"Value": "{{Merge: {{RodneyOBrienFriends}}, {{GuntherInternalName}}}}",
             "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP"
+                "GuntherInternalName|contains=None": "false"
             }
 		},
         {
 			"Name": "NoraFriends",
-			"Value": "ToriLK, Maru"
+			"Value": "ToriLK, Maru, Harvey"
 		},
         {
 			"Name": "NoraFriends",
@@ -398,11 +437,169 @@
 			"Name": "NoraFriends",
 			"Value": "{{Merge: {{NoraFriends}}, Mateo}}",
             "When": {
-                "HasMod": "DN.SnS"
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch1.Mateo.0"
             }
 		},
-        // ES
-
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "Nova.Dylan, Leah, Elliott, Emily"
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, Abigail}}",
+            "When": {
+                "HasSeenEvent": "EnD.EliBonus.01" //adventurer guild
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, Krobus}}",
+            "When": {
+                "HasSeenEvent": "EnD.Eli.05", //woods
+                "Relationship:Krobus|contains=Unmet": "false"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, Mateo}}",
+            "When": {
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch1.Mateo.0"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, Nora}}",
+            "When": {
+                "HasMod": "Bagi.Nora.CP"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, EveT}}",
+            "When": {
+                "HasMod": "7thAxis.DitR.CP"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, SenS}}",
+            "When": {
+                "HasMod": "7thAxis.DitR.CP",
+                "HasSeenEvent": "7thAxis.DitR.CP.Events.SenS.0h"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, Cirrus}}",
+            "When": {
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch3.Cirrus.1"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, MadDog.HashtagBearFam.Sigurd}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, MadDog.HashtagBearFam.Sondra}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, MadDog.HashtagBearFam.Gunnar}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "BearFamExtraMembers"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, MadDog.HashtagBearFam.Gudrun}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "BearFamExtraMembers"
+            }
+		},
+        {
+			"Name": "Nova.EliFriends",
+			"Value": "{{Merge: {{Nova.EliFriends}}, MadDog.HashtagBearFam.Teren}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "TerenMysteryMail"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "Nova.Eli, Leah, Elliott, Willy, Maru, Demetrius"
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, Nora}}",
+            "When": {
+                "HasMod": "Bagi.Nora.CP"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, EveT}}",
+            "When": {
+                "HasMod": "7thAxis.DitR.CP"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, Cirrus}}",
+            "When": {
+                "HasMod": "DN.SnS",
+                "HasSeenEvent": "SnS.Ch3.Cirrus.1"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, MadDog.HashtagBearFam.Sigurd}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, MadDog.HashtagBearFam.Sondra}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, MadDog.HashtagBearFam.Gunnar}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "BearFamExtraMembers"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, MadDog.HashtagBearFam.Gudrun}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "BearFamExtraMembers"
+            }
+		},
+        {
+			"Name": "Nova.DylanFriends",
+			"Value": "{{Merge: {{Nova.DylanFriends}}, MadDog.HashtagBearFam.Teren}}",
+            "When": {
+                "HasMod": "MadDog.HashtagBearFam",
+                "HasFlag": "TerenMysteryMail"
+            }
+		},
         // SVE
         {
             "Name": "ApplesHere",
@@ -414,9 +611,6 @@
         {
 			"Name": "AndyFriends",
 			"Value": "George, Susan",
-            "When": {
-                "HasMod": "FlashShifter.StardewValleyExpandedCP"
-            }
 		},
         {
 			"Name": "AndyFriends",
