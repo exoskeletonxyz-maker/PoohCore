@@ -7,6 +7,9 @@
   <Nullable>enable</Nullable>
   <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   <SkipGameFolderCheck>true</SkipGameFolderCheck>
+
+<GamePath>$(MSBuildThisFileDirectory)fake_game_folder</GamePath>
+
 </PropertyGroup>
 
   <ItemGroup>
