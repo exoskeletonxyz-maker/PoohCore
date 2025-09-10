@@ -1,15 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>PoohCore</RootNamespace>
-	<GamePath>C:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
-	  <EnableHarmony>true</EnableHarmony>
-
+    <GamePath>C:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
+    <EnableHarmony>true</EnableHarmony>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <!-- Package NuGet resmi yang masih diperlukan -->
   <ItemGroup>
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+  </ItemGroup>
+
+  <!-- Compile semua source code utama -->
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+  </ItemGroup>
+
+  <!-- Compile semua library pihak ketiga dari folder libs -->
+  <ItemGroup>
+    <Compile Include="libs\**\*.cs" />
   </ItemGroup>
 
 </Project>
