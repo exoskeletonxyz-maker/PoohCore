@@ -1,24 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-  <TargetFramework>net6.0</TargetFramework>
-  <RootNamespace>PoohCore</RootNamespace>
-  <EnableHarmony>true</EnableHarmony>
-  <Nullable>enable</Nullable>
-  <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-  <SkipGameFolderCheck>true</SkipGameFolderCheck>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>PoohCore</RootNamespace>
+    <EnableHarmony>true</EnableHarmony>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
-<GamePath>$(MSBuildThisFileDirectory)fake_game_folder</GamePath>
+    <!-- Agar ModBuildConfig tidak mencari game folder asli -->
+    <SkipGameFolderCheck>true</SkipGameFolderCheck>
+    <GamePath>$(MSBuildThisFileDirectory)fake_game_folder</GamePath>
+  </PropertyGroup>
 
-</PropertyGroup>
-
+  <!-- Package Pathoschild, hanya jika tidak di CI -->
   <ItemGroup Condition="'$(CI)' != 'true'">
-  <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
-</ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+  </ItemGroup>
 
+  <!-- Compile hanya file yang aman -->
   <ItemGroup>
     <Compile Include="src\**\*.cs" />
-    <Compile Include="libs\**\*.cs" />
+    <Compile Include="libs\**\*.cs" Exclude="libs\Force.DeepCloner\**\*.cs" />
+  </ItemGroup>
+
+  <!-- Reference ke libs/dll yang dibutuhkan -->
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>libs\HarmonyLib\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="ContentPatcher">
+      <HintPath>libs\ContentPatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="StardewValley">
+      <HintPath>libs\StardewValley.dll</HintPath>
+    </Reference>
+    <Reference Include="StardewModdingAPI">
+      <HintPath>libs\StardewModdingAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
