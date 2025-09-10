@@ -4,11 +4,6 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DeepCloner")]
-[assembly: AssemblyDescription("Library for cloning objects")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Force")]
-[assembly: AssemblyProduct("DeepCloner")]
 [assembly: AssemblyCopyright("Copyright © Force 2016-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
