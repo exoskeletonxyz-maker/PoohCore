@@ -6,20 +6,15 @@
     <GamePath>C:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
     <EnableHarmony>true</EnableHarmony>
     <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
-  <!-- Package NuGet resmi yang masih diperlukan -->
   <ItemGroup>
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
   </ItemGroup>
 
-  <!-- Compile semua source code utama -->
   <ItemGroup>
     <Compile Include="src\**\*.cs" />
-  </ItemGroup>
-
-  <!-- Compile semua library pihak ketiga dari folder libs -->
-  <ItemGroup>
     <Compile Include="libs\**\*.cs" />
   </ItemGroup>
 
