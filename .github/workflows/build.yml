@@ -1,0 +1,40 @@
+name: Build PoohCore
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Setup .NET 6 SDK
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      # Restore NuGet packages
+      - name: Restore dependencies
+        run: dotnet restore PoohCore.csproj
+
+      # Build project
+      - name: Build PoohCore
+        run: dotnet build PoohCore.csproj -c Release --no-restore
+
+      # Optional: Publish artifacts (bisa dipakai untuk testing)
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: PoohCore-Build
+          path: |
+            bin/Release/net6.0/**/*.dll
