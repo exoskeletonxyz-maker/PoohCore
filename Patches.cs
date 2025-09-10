@@ -1,10 +1,9 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.GameData.Characters;
 using System;
 using Microsoft.Xna.Framework;
-using Force.DeepCloner;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using xTile.Dimensions;
@@ -14,6 +13,7 @@ namespace PoohCore
     internal class Patches
     {
         private static IMonitor Monitor;
+
         internal static void behaviorOnFarmerLocationEntry_Postfix(StardewValley.NPC __instance, GameLocation location, Farmer who)
         {
             try
@@ -34,9 +34,10 @@ namespace PoohCore
             }
             catch (Exception ex)
             {
-                //Monitor.Log($"Failed in {nameof(behaviorOnFarmerLocationEntry_Postfix)}:\n{ex}", LogLevel.Error);
+                // Log error jika perlu
             }
         }
+
         internal static void addActor_Postfix(StardewValley.Event __instance, string name, int x, int y, int facingDirection, GameLocation location)
         {
             try
@@ -50,8 +51,17 @@ namespace PoohCore
                         __instance.actors.Remove(actorByName);
                         NPC myNPC = Game1.getCharacterFromName(name);
                         string textureNameForCharacter = NPC.getTextureNameForCharacter(name);
-                        NPC nPC;
-                        nPC = new NPC(new AnimatedSprite("Characters\\" + textureNameForCharacter, 0, myNPC.Sprite.SourceRect.Width, myNPC.Sprite.SourceRect.Height), actorByName.Position, actorByName.currentLocation.Name, actorByName.FacingDirection, actorByName.Name, actorByName.Portrait, eventActor: true);
+
+                        NPC nPC = new NPC(
+                            new AnimatedSprite("Characters\\" + textureNameForCharacter, 0, myNPC.Sprite.SourceRect.Width, myNPC.Sprite.SourceRect.Height),
+                            actorByName.Position,
+                            actorByName.currentLocation.Name,
+                            actorByName.FacingDirection,
+                            actorByName.Name,
+                            actorByName.Portrait,
+                            eventActor: true
+                        );
+
                         if (__instance.isFestival)
                         {
                             try
@@ -61,19 +71,19 @@ namespace PoohCore
                                     nPC.setNewDialogue(dialogue);
                                 }
                             }
-                            catch (Exception)
-                            {
-                            }
+                            catch { }
                         }
+
                         __instance.actors.Add(nPC);
                     }
                 }
             }
             catch (Exception ex)
             {
-                //Monitor.Log($"Failed in {nameof(behaviorOnFarmerLocationEntry_Postfix)}:\n{ex}", LogLevel.Trace);
+                // Log error jika perlu
             }
         }
+
         internal static void resetForNewDay_Prefix(StardewValley.NPC __instance, int dayOfMonth)
         {
             try
@@ -81,27 +91,18 @@ namespace PoohCore
                 if (__instance != null)
                 {
                     CharacterData data = __instance.GetData();
-                    if (data != null)
+                    if (data != null && data.CustomFields.TryGetValue("poohnhi.PoohCore/WideCharacter", out string WideCharacterValue))
                     {
-                        try
+                        if (WideCharacterValue != null && WideCharacterValue != "false")
                         {
-                            var test = data.CustomFields.TryGetValue("poohnhi.PoohCore/WideCharacter", out string WideCharacterValue);
-                            if (WideCharacterValue != null && WideCharacterValue != "false")
-                            {
-                                __instance.forceOneTileWide.Set(true);
-                            }
+                            __instance.forceOneTileWide.Set(true);
                         }
-                        catch
-                        {
-
-                        }
-                        
                     }
                 }
             }
             catch (Exception ex)
             {
-                //Monitor.Log($"Failed in {nameof(resetForNewDay_Prefix)}:\n{ex}", LogLevel.Error);
+                // Log error jika perlu
             }
         }
     }
